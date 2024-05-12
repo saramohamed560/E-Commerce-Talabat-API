@@ -1,0 +1,24 @@
+--Session 01
+Video 8 
+1. Product Module 
+1.Create ProductBrand ,ProductCategory,Product Tables (Name ,Description,PictureUrl,Price)
+2.Make Relations
+
+video 9
+1. Db Context in Rep Layer
+2. add DbSet
+2. Connection string
+3. Configuartion of productModule by fluent api
+
+Video 10
+Update DB
+video 11 -> Data Seeding
+1.create folder in Data called DataSeed and put json files inside it
+2.create StoreContextSeedClass inside Data Folder Pro to build SeedAsync Func
+video 12
+Generic Repository
+1.create folder called Repositories.contract and create Ieneric Interface
+2.create class implement this interface called GenericRepository
+
+Video 13 
+Create ProductCntroller
