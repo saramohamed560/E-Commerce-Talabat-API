@@ -16,7 +16,7 @@ The E-Commerce API project is a robust backend solution tailored for managing th
 * Identity Package
 * Onion Archeticture pattern
 * Unit Of Work and Generic Repository pattern
-* RESTfull API
+* RESTful API
 * Specification Design pattern
 * AutoMapper
 * JWT
