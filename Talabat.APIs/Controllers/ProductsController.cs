@@ -26,6 +26,7 @@ namespace Talabat.APIs.Controllers
             _mapper = mapper;
         }
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Cached(600)] //action filter
         [HttpGet]
         //baseUrl/api/Products
           public async  Task<ActionResult<Pagination<ProductToReturnDTO>>> GetProducts([FromQuery]ProductSpecParams specParams){
@@ -36,6 +37,7 @@ namespace Talabat.APIs.Controllers
             var count = await _unitOfWork.Repository<Product>().GetCountAsync(countSpec);
             return Ok(new Pagination<ProductToReturnDTO>(specParams.PageSize,specParams.PageIndex,count,data));
          }
+        [Cached(600)]
         [HttpGet("{id}")]
         //BaseUrl/api/products/1
         //Imporove Swagger Documentation
@@ -52,6 +54,7 @@ namespace Talabat.APIs.Controllers
             return Ok(_mapper.Map<Product,ProductToReturnDTO>(product));//200
         }
 
+        [Cached(600)]
         [HttpGet("brands")]// /api/Products/brands
 
         public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetBrands (){
@@ -60,8 +63,8 @@ namespace Talabat.APIs.Controllers
       
         }
 
+        [Cached(600)]
         [HttpGet("categories")]// /api/Products/categories
-
         public async Task<ActionResult<IReadOnlyList<ProductCategory>>> GetCategories()
         {
             var categories = await _unitOfWork.Repository<ProductCategory>().GetAllAsync();
