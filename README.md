@@ -22,3 +22,4 @@ The E-Commerce API project is a robust backend solution tailored for managing th
 * JWT
 * Redis for In-memory database
 * Integrate with Stripe payment gateway
+* Caching using Redis
